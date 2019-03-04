@@ -33,7 +33,7 @@ class Untitled {
 		total_savings = savingsPerMonth + (total_savings * rate);
 				
 		// Show To the User
-		System.out.println("Savings after 6 months: " + Double.toString(total_savings - savingsPerMonth));
+		System.out.println("Savings after 6 months: " + Double.toString(total_savings));
 		
 	}
 }
