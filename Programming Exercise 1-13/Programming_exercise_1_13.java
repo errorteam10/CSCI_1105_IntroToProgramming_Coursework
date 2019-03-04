@@ -1,3 +1,11 @@
+/*
+* - Brent Dalling
+* - March 25th, 2019
+*
+* - Computes An Equation And Displays The Console
+*/
+
+
 class Untitled {
 	public static void main(String[] args) {
 	
