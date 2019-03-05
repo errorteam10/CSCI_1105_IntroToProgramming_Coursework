@@ -64,19 +64,19 @@ class programming_exercise_4_23 {
 		System.out.println("Hours Worked: " + hoursWorked);
 		
 		// Display pay rate
-		System.out.println("Pay Rate: $" + hourlyWage);
+		System.out.printf("Pay Rate: $%4.2f \n", hourlyWage);
 		
 		// Display gross pay
-		System.out.println("Gross Pay: $" + grossPay);
+		System.out.printf("Gross Pay: $%4.2f \n", grossPay);
 		
 		// Display Deductions
 		System.out.println("Deductions: ");
-			System.out.println("	Federal Withholding ("+(fWithholding > 1 ? fWithholding / 100 : fWithholding )+")");
-			System.out.println("	State Withholding ("+(sWithholding > 1 ? sWithholding / 100 : sWithholding )+")");
-			System.out.println("	Total Withholding: $" + (fDeduction + sDeduction));
-		
+			System.out.printf("	Federal Withholding (%4.2f%%) $%4.2f \n", (fWithholding > 1 ? fWithholding / 100 : fWithholding ), fDeduction);
+			System.out.printf(" 	State Withholding (%4.2f%%) $%4.2f \n", (sWithholding > 1 ? sWithholding / 100 : sWithholding ), sDeduction);
+			System.out.printf(" 	Total Withholding $%4.2f \n", fDeduction + sDeduction);
+					
 		// Show Net Pay
-		System.out.println("Net Pay: $" + (grossPay - (fDeduction + sDeduction)));
+		System.out.printf("Net Pay: $%4.2f \n", (grossPay - fDeduction + sDeduction));
 		
 	}
 }
