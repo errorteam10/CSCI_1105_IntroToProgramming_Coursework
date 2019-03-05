@@ -37,9 +37,8 @@ class programming_exercise_3_19 {
 		
 		// Total Perimeter
 		total = sideA + sideB + sideC;
-		
 		// Determine If A Triangle
-		if(sideA + sideB > sideC) {
+		if(sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA) {
 			System.out.println("You Have A Triangle! A " + total);
 		} else {
 			System.out.println("Not A Triangle!");

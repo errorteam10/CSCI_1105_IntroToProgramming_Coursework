@@ -26,9 +26,9 @@ class programming_exercise_3_23 {
 		
 		// determine if within the rectangle
 		if(x <= (10 / 2) && y <= (5.0 / 2)) {
-			System.out.println("Point ("+(int)x+", "+(int)y+") Is In Rectangle.");
+			System.out.println("Point ("+x+", "+y+") Is In Rectangle.");
 		} else {
-			System.out.println("Point ("+(int)x+", "+(int)y+") Is Not In The Triangle.");
+			System.out.println("Point ("+x+", "+y+") Is Not In The Triangle.");
 		}
 	}
 }
