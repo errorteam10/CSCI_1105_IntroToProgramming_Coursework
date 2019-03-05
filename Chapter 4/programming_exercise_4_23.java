@@ -76,7 +76,7 @@ class programming_exercise_4_23 {
 			System.out.printf(" 	Total Withholding $%4.2f \n", fDeduction + sDeduction);
 					
 		// Show Net Pay
-		System.out.printf("Net Pay: $%4.2f \n", (grossPay - fDeduction + sDeduction));
+		System.out.printf("Net Pay: $%4.2f \n", (grossPay - (fDeduction + sDeduction)));
 		
 	}
 }
