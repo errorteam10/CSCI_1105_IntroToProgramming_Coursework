@@ -1,4 +1,3 @@
-import java.util.*;
 
 /*
 * - Brent Dalling
@@ -8,17 +7,15 @@ import java.util.*;
 */
 
 import java.util.Scanner;
-import java.time.*;
 
 class programming_exercise_4_17 {
 	public static void main(String[] args) {
 		
 		// Define Variables 
 		boolean leap;
-		String 	month;
+		String 	month; 
 		int 	year;
 		Scanner user = new Scanner(System.in);
-		Calendar calendar = new GregorianCalendar();
 		
 		// get year from the user 
 		System.out.println("Enter Year: ");
