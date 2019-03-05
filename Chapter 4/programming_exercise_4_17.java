@@ -10,7 +10,6 @@
 import java.util.Scanner;
 import java.time.YearMonth;
 import java.util.Arrays;
-import java.lang.Integer;
 
 class programming_exercise_4_17 {
 	public static void main(String[] args) {
