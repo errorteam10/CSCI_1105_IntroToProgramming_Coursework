@@ -18,6 +18,17 @@ public class getMethods {
 	private static SimpleDateFormat simple = new SimpleDateFormat("MM/dd/yyyy");
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/**
 	 * <h1>dateFromTime()</h1>
 	 * @param time (int; The epoch time value to be converted. Must be in milliseconds.)
@@ -41,29 +52,27 @@ public class getMethods {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/**
 	 * <h1>dateFromTime()</h1>
-	 * @param time (long; The epoch time value to be converted. Must be in milliseconds.)
+	 * @param time (int; The epoch time value to be converted. Must be in milliseconds.)
 	 * @return String
 	 * 
 	 * {@code}
 	 * 	"mm/dd/yyyy"
 	 * 
 	 */
-	
-	public static String dateFromTime(long time /* System.currentTimeMillis()*/) {
-		
-		// getDateFromTime() Variables
-		Date date = new Date();
-		
-		// Set Date To The Input [time]
-		date.setTime((long)time * 1000);
-		
-		// Return Formatted
-		return simple.format(date);
-	}
-	
-	public String getDate(int time) {
+	public String date(int time) {
 		
 		// getTimeDiff() Variables 
 		long current 	= System.currentTimeMillis() / 100;
@@ -120,47 +129,50 @@ public class getMethods {
 		while (conversion > 604800) {
 			weeks += 1;
 			conversion -= 604800;
-		}
-				
+		}	
 		// While Days Remain
 		while (conversion > 86400) {
 			days += 1;
 			conversion -= 86400;
 		}
-		
 		// Get Days Current In Month
 		while(daysPast > 86400) {
 			daysCounter += 1;
 			daysPast -= 86400;
-		}
-				
+		}	
 		// While Hours Remain
 		while (conversion > 3600) {
 			hours += 1;
 			conversion -= 3600;
-		}
-				
+		}	
 		// While Minutes Remain
 		while (conversion  > 60) {
 			minutes += 1;
 			conversion -= 60;
-		}
-				
+		}	
 		// Left Over Is Total Seconds
 		seconds = conversion;
 		
 		days = daysCounter + 2;
 		
-		if(daysCounter >= 7) {
-			daysCounter -= 7;
-		}
+		if(daysCounter >= 7) { daysCounter -= 7; }
 		
-		if(daysCounter > 7) {
-			daysCounter -= 7;
-		}
+		if(daysCounter > 7) { daysCounter -= 7; }
 		
 		return weeklyDays[daysCounter - 2] + " " + monthNames[months] + " " + days + "th, " + (years + 1970);
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	/**
@@ -185,6 +197,10 @@ public class getMethods {
 		int minutes  = 0;
 		long seconds  = 0;
 		
+		if(conversion < 0) {
+			conversion *= -1;
+		}
+		
 		// While difference is during a week
 		while (conversion > 604800) {
 			weeks += 1;
@@ -227,21 +243,28 @@ public class getMethods {
 		
 	}
 	
+
 	
-	/**
-	 * <h1>timeDiff()</h1>
-	 * @param time (long; The epoch time value to be converted. Must be in seconds.)
-	 * @return String
-	 * 
-	 * {@code}
-	 * 	"W | H | M | S  Weeks/Hours/Minutes/Seconds Ago."
-	 * 
-	 */
 	
-	public static String timeDiff(long time) {
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+public static String timeDiff(int time, int other) {
 		
 		// getTimeDiff() Variables 
-		long current = System.currentTimeMillis() / 1000;
+		long current = other;
 		long date  	 = time;
 		long conversion = current - date;
 		int weeks 	 = 0;
@@ -250,6 +273,10 @@ public class getMethods {
 		int minutes  = 0;
 		long seconds  = 0;
 		
+		if(conversion < 0) {
+			conversion *= -1;
+		}
+		
 		// While difference is during a week
 		while (conversion > 604800) {
 			weeks += 1;
@@ -291,6 +318,23 @@ public class getMethods {
 		}
 		
 	}
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 	
 	
 	/**
@@ -304,73 +348,6 @@ public class getMethods {
 	 */
 	
 	public static String totalTime(int time) {
-		
-		// getTimeDiff() Variables 
-		long current 	= System.currentTimeMillis() / 1000;
-		long date  	 	= time;
-		long conversion = current - date;
-		int years 		= 0;
-		int months 		= 0;
-		int weeks 	 	= 0;
-		int days 	 	= 0;
-		int hours 	 	= 0;
-		int minutes  	= 0;
-		long seconds  	= 0;
-		
-		while (conversion > 31556926) {
-			years += 1;
-			conversion  -= 31556926;
-		}
-		
-		while (conversion > 2629743) {
-			months += 1;
-			conversion  -= 2629743;
-		}
-				
-		// While difference is during a week
-		while (conversion > 604800) {
-			weeks += 1;
-			conversion -= 604800;
-		}
-				
-		// While Days Remain
-		while (conversion > 86400) {
-			days += 1;
-			conversion -= 86400;
-		}
-				
-		// While Hours Remain
-		while (conversion > 3600) {
-			hours += 1;
-			conversion -= 3600;
-		}
-				
-		// While Minutes Remain
-		while (conversion  > 60) {
-			minutes += 1;
-			conversion -= 60;
-		}
-				
-		// Left Over Is Total Seconds
-		seconds = conversion;
-		
-		return "Years: " + years + " -- Months: " + months + " -- Weeks: " + weeks + " -- Days: " + days + "  -- Hours: " + hours + " -- Minutes: " + minutes + " -- Seconds: " + seconds;
-		 
-	}
-	
-	
-	/**
-	 * <h1>totalTime()</h1>
-	 * @param time (long; The epoch time value to be converted. Must be in seconds.)
-	 * @return String
-	 * 
-	 * {@code}
-	 * 	"Years: Months: Weeks: Days: Hours: Seconds: "
-	 * 
-	 */
-	
-	
-	public static String totalTime(long time) {
 		
 		// getTimeDiff() Variables 
 		long current 	= System.currentTimeMillis() / 1000;
