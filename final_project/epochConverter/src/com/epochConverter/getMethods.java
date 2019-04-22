@@ -197,9 +197,12 @@ public class getMethods {
 		int minutes  = 0;
 		long seconds  = 0;
 		
+		System.out.println("Conv." + conversion);
+		
 		if(conversion < 0) {
 			conversion *= -1;
 		}
+		
 		
 		// While difference is during a week
 		while (conversion > 604800) {
@@ -229,7 +232,9 @@ public class getMethods {
 		seconds = conversion;
 		
 		// Minutes Is Set But Not Hours
-		if(minutes != 0 && hours == 0) {
+		if(seconds != 0 && minutes == 0) {
+			return seconds + "ago";
+		}else if(minutes != 0 && hours == 0) {
 			return minutes + " Min Ago.";
 		} else if (hours != 0 && days == 0) {
 			return hours + " Hours Ago.";
@@ -273,6 +278,8 @@ public static String timeDiff(int time, int other) {
 		int minutes  = 0;
 		long seconds  = 0;
 		
+		System.out.println("Conv." + conversion);
+		
 		if(conversion < 0) {
 			conversion *= -1;
 		}
@@ -305,7 +312,9 @@ public static String timeDiff(int time, int other) {
 		seconds = conversion;
 		
 		// Minutes Is Set But Not Hours
-		if(minutes != 0 && hours == 0) {
+		if(seconds != 0 && minutes == 0) {
+			return seconds + "Sec ago";
+		}else if(minutes != 0 && hours == 0) {
 			return minutes + " Min Ago.";
 		} else if (hours != 0 && days == 0) {
 			return hours + " Hours Ago.";

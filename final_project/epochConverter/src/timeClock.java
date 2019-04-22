@@ -25,7 +25,7 @@ public class timeClock {
 
 		timeClock.waiter("Below you will see the formal date:. The formal date is a standard date format. \n Formal Date: " + epochConverter.get.dateFromTime(time) + " \n You can use the dateFromTime method like this : epochconverter.get.dateFromTime(1555949070)");
 
-		timeClock.waiter("Below you will see the Total Time:. The total time shows you how many years, months, weeks, days, hours, and seconds have passed.  \n Date Counted: " + epochConverter.get.totalTime(time)+"\n You can use the totalTime method like this : epochconverter.get.totalTime(1555949070)");
+		timeClock.waiter("Below you will see the Total Time:. The total time shows you how many years, months, weeks, days, hours, and seconds have passed since January 1st, 1970.  \n Date Counted: " + epochConverter.get.totalTime(time)+"\n You can use the totalTime method like this : epochconverter.get.totalTime(1555949070)");
 		
 		timeClock.waiter("Next, we will show you how to utilize the setters. Not every application is the same. For this reason, the setters allow you to set the time you are comparing from.");
 
