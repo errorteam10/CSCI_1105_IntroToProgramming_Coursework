@@ -33,10 +33,6 @@ public class getMethods {
 		// getDateFromTime() Variables 
 		Date date = new Date();
 		
-		String dateFormattedForEase = getDate(time);
-		
-		System.out.print(dateFormattedForEase);
-		
 		// Set Date To The Input [time]
 		date.setTime((long)time * 1000);
 		
@@ -67,16 +63,17 @@ public class getMethods {
 		return simple.format(date);
 	}
 	
-	public static String getDate(int time) {
+	public String getDate(int time) {
 		
 		// getTimeDiff() Variables 
-		long current 	= System.currentTimeMillis() / 1000;
+		long current 	= System.currentTimeMillis() / 100;
 		long date  	 	= time;
 		long conversion = date;
 		int years 		= 0;
 		int months 		= 0;
 		int weeks 	 	= 0;
 		int days 	 	= 0;
+		long daysPast 	= 0;
 		int hours 	 	= 0;
 		int minutes  	= 0;
 		long seconds  	= 0;
@@ -85,6 +82,7 @@ public class getMethods {
 		
 		String[] weeklyDays = {"Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"};
 		String[] monthNames = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novemeber", "December"};
+		
 		while (conversion > 31556926) {
 			years += 1;
 			conversion  -= 31556926;
@@ -113,6 +111,10 @@ public class getMethods {
 				daysCounter += 28;
 			}
 		}
+		
+		daysPast = conversion;
+		
+		daysCounter = 0;
 				
 		// While difference is during a week
 		while (conversion > 604800) {
@@ -124,6 +126,12 @@ public class getMethods {
 		while (conversion > 86400) {
 			days += 1;
 			conversion -= 86400;
+		}
+		
+		// Get Days Current In Month
+		while(daysPast > 86400) {
+			daysCounter += 1;
+			daysPast -= 86400;
 		}
 				
 		// While Hours Remain
@@ -141,19 +149,17 @@ public class getMethods {
 		// Left Over Is Total Seconds
 		seconds = conversion;
 		
-		daysCounter = daysCounter / 7;
+		days = daysCounter + 2;
 		
-		System.out.println(daysCounter);
+		if(daysCounter >= 7) {
+			daysCounter -= 7;
+		}
 		
 		if(daysCounter > 7) {
 			daysCounter -= 7;
 		}
 		
-		System.out.println(daysCounter);
-		
-		System.out.println(weeklyDays[daysCounter - 1] + " " + monthNames[months] + " " + days + "th, " + (years + 1970));
-		
-		return "";
+		return weeklyDays[daysCounter - 2] + " " + monthNames[months] + " " + days + "th, " + (years + 1970);
 	}
 	
 	

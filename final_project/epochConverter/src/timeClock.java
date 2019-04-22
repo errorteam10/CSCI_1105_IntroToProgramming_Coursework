@@ -15,11 +15,14 @@ public class timeClock {
 		// Main() Variables 
 		int time;
 		String[] converted;
+		String formatted;
 		
 		// Get The Epoch Time To Be Converted From The User
 		time = getInputTime();
 		
-		converted  = epoch.all(time);
+		converted  = epochConverter.all(time);
+		formatted = epochConverter.get.getDate(time);
+		
 		
 		for (String e: converted) {
 			System.out.println(e);
